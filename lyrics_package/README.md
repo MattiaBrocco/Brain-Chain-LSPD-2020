@@ -9,5 +9,7 @@ Each one of the above files contains the code of the implementation of an API (p
 
 In the ```Lyrics.py``` file, we exploited the lyrics.ovh API with the aim of developing a function which, given the song author and title, would be able to return the lyrics of the song.
 
-In the ```SearchLy.py``` file, 
+In the ```SearchLy.py``` file, using the SearchLy API, we developed a function to search similar songs from the SearchLy database given a String query. In our model the query consists in the song title.
+
+In the ```Songsterr.py``` file, 
 
