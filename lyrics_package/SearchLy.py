@@ -1,5 +1,7 @@
 import json
 import requests
+import pandas as pd
+
 
 def similarity(artist, title):
     song = title
@@ -36,16 +38,10 @@ def similarity(artist, title):
             sim_response = requests.get(sim_url, params = sim_payload)
 
             sim_data = json.loads(sim_response.text)
-            print("Listen to similar songs:")
-            for x in sim_data["response"]["similarity_list"]:
-                print("Title:", x["song_name"],"| Artist:", x["artist_name"],
-                      " | Similarity: ", x["percentage"],"%")
+            print("Listen to similar songs:\n")
+            
+            df = pd.DataFrame({"Title":[x["song_name"] for x in sim_data["response"]["similarity_list"]],
+                               "Artist":[x["artist_name"] for x in sim_data["response"]["similarity_list"]],
+                               "Similarity":[x["percentage"] for x in sim_data["response"]["similarity_list"]]})
+            print(df)
     return True
-
-
-
-
-
-
-
-
