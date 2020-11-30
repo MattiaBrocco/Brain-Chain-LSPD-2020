@@ -17,18 +17,18 @@ def similarity(artist, title):
     # The response is formatted in JSON
     data = json.loads(response.text)
     if data["error"] == True:
-        print("Error in the request")
+        return "Error in the call to SearchLy"
     else:
         if len(data["response"]["results"]) < 1:
             # This is the case when the request is successful, but empty
-            print("Similars song not found")
+            return "Similars song not found"
         elif len(data["response"]["results"]) > 1:
             # If more than one result is found, we must let
             # the user choose what to do by showing all the found results
             print("We couldn't find songs similar to your search,",
-                  "our suggestions are:", sep="\n", end = "\n\n" )
-            for x in data["response"]["results"]:
-                print( x["name"] )
+                  "our best suggestions are:", sep="\n", end = "\n\n" )
+            df_res = pd.DataFrame({"--------------------------------":[x["name"] for x in data["response"]["results"]]})
+            return df_res.head(5)
         else:
             # If only one result is found, with a certain degree
             # of confidence, this is the right song!
@@ -47,5 +47,4 @@ def similarity(artist, title):
             df = pd.DataFrame({"Title":[x["song_name"] for x in sim_data["response"]["similarity_list"]],
                                "Artist":[x["artist_name"] for x in sim_data["response"]["similarity_list"]],
                                "Similarity":[x["percentage"] for x in sim_data["response"]["similarity_list"]]})
-            print(df)
-    return True
+            return df.head(5)
