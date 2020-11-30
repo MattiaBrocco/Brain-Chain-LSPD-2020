@@ -12,7 +12,7 @@ To reach our goal we will use some new public available APIs.
 However, before starting using the program, please follow the instructions.
 The first thing to do is to download the repository and populate the database with your username and password.
  
-# COMMAND LINE PARAMETERS
+## COMMAND LINE PARAMETERS
  
 Some command line parameters are required in order to run the main script.
  
@@ -29,4 +29,9 @@ Thanks for your attention!
 
 Team Brain Chain
 
-# AUTHORS 
+## AUTHORS 
+
+- [Mattia Brocco]: https://www.linkedin.com/in/mattia-brocco-digital-student/ 
+- Mattia Brocco: <p>https://www.linkedin.com/in/mattia-brocco-digital-student/</p>
+
+
