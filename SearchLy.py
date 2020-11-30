@@ -1,15 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import json
 import requests
-
-
-# In[25]:
-
 
 def similarity(artist, title):
     song = title
@@ -53,13 +43,8 @@ def similarity(artist, title):
     return True
 
 
-# In[27]:
 
 
-sid = similarity("chris webby", "paparazzi")
-
-
-# In[ ]:
 
 
 
