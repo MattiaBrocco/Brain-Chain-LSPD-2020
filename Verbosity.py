@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
-
-
 def check_output (verbosity,output): 
     #This function defines 
     # :param verbosity: the level of verbosity required by the user
