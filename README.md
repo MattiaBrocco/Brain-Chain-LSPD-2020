@@ -31,7 +31,11 @@ Team Brain Chain
 
 ## AUTHORS 
 
-- [Mattia Brocco]: https://www.linkedin.com/in/mattia-brocco-digital-student/ 
 - Mattia Brocco: <p>https://www.linkedin.com/in/mattia-brocco-digital-student/</p>
+- Anna Costa: <p>https://www.linkedin.com/in/annacosta99/</p>
+- Alessandra Cancellari: <p>https://www.linkedin.com/in/alessandracancellari/</p>
+- Eleonora Sartori: <p>https://www.linkedin.com/in/eleonorasartori97/</p>
+
+
 
 
