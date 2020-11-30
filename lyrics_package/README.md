@@ -5,6 +5,11 @@ In this folder you can find the following list of files:
 2) ```SearchLy.py```
 3) ```Songsterr.py```
 
-Each one of the above files contains the code of the implementation of an API.
-Precisely, the APIs we used in the development of our project are: "Lyrics.ovh", "SearchLy" and "Songsterr".
+Each one of the above files contains the code of the implementation of an API (precisely lyrics.ovh, SearchLy and Songsterr).
+
+In the ```Lyrics.py``` file, we exploited the lyrics.ovh API with the aim of developing a function which, given the song author and title, would be able to return the lyrics of the song.
+
+In the ```SearchLy.py``` file, using the SearchLy API, we developed a function to search similar songs from the SearchLy database given a String query. In our model the query consists in the song title.
+
+In the ```Songsterr.py``` file, 
 
