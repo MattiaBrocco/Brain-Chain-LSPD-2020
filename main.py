@@ -24,13 +24,12 @@ def parsing_input():
     args = parser.parse_args()
     return args
 
-
 try:
     args = parsing_input()
     
     # --------------------------------
     # Search history
-    hist = cvs.create_hist(args.artist, args.title)
+    hist = History.create_hist(args.artist, args.title)
     if args.history:
         print("Most searched songs")
         print(hist)
@@ -48,7 +47,7 @@ try:
         print("{}\n\n".format(song_l))
     else:
         print("{}\n\n".format(song_l))   
-        
+       
     # --------------------------------
     # SONGSTERR
     song_t = Songsterr.artists_songs(args.artist, args.title)
@@ -70,5 +69,9 @@ except ValueError:
     # which sometimes arises from API calls
     print("Something wrong, please retry")
     sys.exit()
+    
 except PermissionError:
     print("Close the history.csv file before running the program!")
+    
+except ConnectionError:
+    print("Bad conncetion error!")

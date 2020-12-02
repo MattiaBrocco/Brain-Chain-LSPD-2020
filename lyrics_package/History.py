@@ -48,14 +48,32 @@ def create_hist(artist, title):
     the most searched parameters will be displayed first.
     """
     art_tit_list = [ (r[1][0], r[1][1]) for r in df.iterrows() ]
-    
     sorted_dict = dict(Counter(art_tit_list))
     list_for_df = [ [k[0].replace("_", " "), k[1].replace("_", " ")] for k, v in sorted_dict.items()  ][::-1]
-    
     upd_df = pd.DataFrame(list_for_df, columns = ["----------------","----------------"]).head(3)
     
-    # show only artist and song
-    return df[df.columns[:2]] # upd_df[["Artist","Title"]]
+    # CODE FOR MOST SEARCHED QUERIES
+    art_tit_list = [ (r[1][0], r[1][1]) for r in df.iterrows() ]
+    sorted_dict = dict(Counter(art_tit_list))
+     # show only artist and song
+    list_for_df = [ [k[0].replace("_", " "), k[1].replace("_", " ")] for k, v in sorted_dict.items()  ]
+    upd_df = pd.DataFrame(list_for_df, columns = ["----------------","----------------"]).head(3)    
+    
+    """
+    # CODE FOR MOST RECENT QUERIES
+    upd_df = df.iloc[::-1]
+    upd_df = upd_df.drop_duplicates(subset = ["Artist", "Title"],
+                                    keep = "first") # first because it would be the most recent
+    upd_df.reset_index(inplace = True, drop = True)
+    upd_df = upd_df[["Artist", "Title"]]
+    upd_df = upd_df.head(3)
+    upd_df["Artist"] = upd_df["Artist"].str.replace("_", " ")
+    upd_df["Title"] = upd_df["Title"].str.replace("_", " ")
+    upd_df = upd_df.rename(columns = {"Artist":"----------------",
+                                      "Title":"----------------"})
+    """
+    
+    return upd_df
 
 
 
