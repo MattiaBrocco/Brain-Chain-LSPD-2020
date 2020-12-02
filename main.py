@@ -1,8 +1,10 @@
 import sys
 import argparse
 from lyrics_package import Lyrics
+from lyrics_package import History
 from lyrics_package import SearchLy
 from lyrics_package import Songsterr
+
 
 def parsing_input():
     #Parsing the input for our program.
@@ -17,13 +19,24 @@ def parsing_input():
     parser.add_argument("-v",
                         help='increases verbosity of the program',
                         action="store_true") # if the user doesn't input "-v" then verbosity is False
+    parser.add_argument("-history", help = "Show most searched songs",  ############
+                        action = "store_true") # if the user doesn't input "-v" then verbosity is False
     args = parser.parse_args()
     return args
 
-# ------------------------------------
-# LYRICS
+
 try:
     args = parsing_input()
+    
+    # --------------------------------
+    # Search history
+    hist = cvs.create_hist(args.artist, args.title)
+    if args.history:
+        print("Most searched songs")
+        print(hist)
+        
+    # --------------------------------
+    # LYRICS
     song_l = Lyrics.get_lyric(args.artist, args.title)
     
     if len(sys.argv)>4:
@@ -36,7 +49,7 @@ try:
     else:
         print("{}\n\n".format(song_l))   
         
-    # ------------------------------------
+    # --------------------------------
     # SONGSTERR
     song_t = Songsterr.artists_songs(args.artist, args.title)
 
@@ -46,14 +59,16 @@ try:
         print(song_t[1],"\n\n")
     else:
         print("Link to tabs:{}\n\n".format(song_t[0]))
-
-    # ------------------------------------
+        
+    # --------------------------------
     # SEARCHLY
     sim_song = SearchLy.similarity(args.artist, args.title)
-
     print("{}".format(sim_song))
     
 except ValueError:
-    # ValueError includes the JSONDecodeError, which sometimes arises from API calls
+    # ValueError includes the JSONDecodeError,
+    # which sometimes arises from API calls
     print("Something wrong, please retry")
     sys.exit()
+except PermissionError:
+    print("Close the history.csv file before running the program!")
