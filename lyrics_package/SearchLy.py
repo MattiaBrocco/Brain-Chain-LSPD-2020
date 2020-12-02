@@ -38,7 +38,7 @@ def similarity(artist, title):
             # retrieved the previous line of code
             sim_url = 'https://searchly.asuarez.dev/api/v1/similarity/by_song'
             sim_payload = {'song_id': song_id}
-
+            
             sim_response = requests.get(sim_url, params = sim_payload)
 
             sim_data = json.loads(sim_response.text)
