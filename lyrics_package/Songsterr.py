@@ -4,6 +4,15 @@ import pandas as pd
 
 
 def artists_songs(artist, title):
+    """
+    The function artists_songs is based on the user input.
+    Once the user will choose the song he wants to listen and
+    the artist of the song, these inputs will be the variable
+    that will be inserted in the API to get the output.
+    In this case, the output will be the URL of the song sheet
+    and a data frame containing three similar songs to the one
+    that has been searched.
+    """
 
     artist = artist.replace("_", " ")
     title = title.replace("_", " ")
@@ -16,8 +25,8 @@ def artists_songs(artist, title):
     if len(datass) == 0:
         return "Songsterr couldn't find any tabs for this song"
     else:
-        tabs_url =
-        "http://www.songsterr.com/a/wa/bestMatchForQueryString?s={}&a={}"
+        tabs_url = \
+            "http://www.songsterr.com/a/wa/bestMatchForQueryString?s={}&a={}"
         # Whitespaces are replaced with "%20" as required by the API
         # in order to make the link exploitable
         url_format = tabs_url.format
