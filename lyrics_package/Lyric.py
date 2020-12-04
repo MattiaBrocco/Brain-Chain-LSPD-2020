@@ -1,14 +1,12 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[78]:
-
 
 import requests
 import json
 
 
 SONG_URL = 'https://api.lyrics.ovh/v1/{}/{}'
+
+# Simple API to retrieve the lyrics of a song
+# The input needed are 'artist' and 'title'
 
 
 def get_lyrics(artist, title):
