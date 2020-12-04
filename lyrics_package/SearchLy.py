@@ -4,6 +4,11 @@ import pandas as pd
 
 
 def similarity(artist, title):
+    """
+    With this function we will obtain similar songs to the one
+    we have searched for. The user input that will start the function
+    are the artist name and the title of the song he are looking for.
+    """
 
     artist = artist.replace("_", " ")
     title = title.replace("_", " ")
@@ -18,6 +23,17 @@ def similarity(artist, title):
     data = json.loads(response.text)
     if data["error"] is True:
         return "Error in the call to SearchLy"
+        """
+        Here, if the result is True, there will be an error in
+        the use of the API. Otherwise, if the response is smaller than 1,
+        this means the request is successful but the user will not
+        receive the list of similar songs.
+        If the response is bigger than 1, the user will not get the list
+        of songs similar to the one he has looking for but the function
+        will provide the user with some best suggestions.
+        If the response is equal to 1, the user will get the right song!
+        """
+
     else:
         if len(data["response"]["results"]) < 1:
             # This is the case when the request is successful, but empty
@@ -58,4 +74,10 @@ def similarity(artist, title):
                                               for x in
                                               sim_data["response"]
                                               ["similarity_list"]]})
+            """
+            Here we have created a dataframe which will display the title
+            of the similar song, the artist and the similarity
+            percentage of that song.
+            """
+
             return df.head(5)
