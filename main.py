@@ -43,15 +43,15 @@ try:
     # LYRICS
     song_l = lyrics.get_lyric(args.artist, args.title)
 
-    if len(sys.argv) > 4:
+    if len(sys.argv) > 4: #######################################
         print("**Use underscores (_) instead of spaces**")
         sys.exit()
 
     if args.v:  # verbosity = False
-        print("This is {} by {}:".format(args.title, args.artist))
-        print("{}\n\n".format(song_l))
+        print("\n\nThis is {} by {}:".format(args.title, args.artist))
+        print("\n\n{}\n\n".format(song_l))
     else:
-        print("{}\n\n".format(song_l))
+        print("\n\n{}\n\n".format(song_l))
 
     # --------------------------------
     # SONGSTERR
