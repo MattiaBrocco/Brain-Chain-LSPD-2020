@@ -1,9 +1,9 @@
 import sys
 import argparse
-from lyrics_package import Lyrics
-from lyrics_package import History
-from lyrics_package import SearchLy
-from lyrics_package import Songsterr
+from lyrics_package import lyrics
+from lyrics_package import history
+from lyrics_package import searchly
+from lyrics_package import songsterr
 
 
 def parsing_input():
@@ -34,14 +34,14 @@ try:
 
     # --------------------------------
     # Search history
-    hist = History.create_hist(args.artist, args.title)
+    hist = history.create_hist(args.artist, args.title, "history.csv")
     if args.history:
         print("Most searched songs")
         print(hist)
 
     # --------------------------------
     # LYRICS
-    song_l = Lyrics.get_lyric(args.artist, args.title)
+    song_l = lyrics.get_lyric(args.artist, args.title)
 
     if len(sys.argv) > 4:
         print("**Use underscores (_) instead of spaces**")
@@ -55,7 +55,7 @@ try:
 
     # --------------------------------
     # SONGSTERR
-    song_t = Songsterr.artists_songs(args.artist, args.title)
+    song_t = songsterr.artists_songs(args.artist, args.title)
 
     if args.v:  # verbosity = False
         print("Link to tabs:{}\n\n".format(song_t[0]))
@@ -64,10 +64,10 @@ try:
         print(song_t[1], "\n\n")
     else:
         print("Link to tabs:{}\n\n".format(song_t[0]))
-
+    
     # --------------------------------
     # SEARCHLY
-    sim_song = SearchLy.similarity(args.artist, args.title)
+    sim_song = searchly.similarity(args.artist, args.title)
     print("{}".format(sim_song))
 
 except ValueError:
