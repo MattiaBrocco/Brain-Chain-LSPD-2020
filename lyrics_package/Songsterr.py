@@ -25,22 +25,21 @@ def artists_songs(artist, title):
     if len(datass) == 0:
         return "Songsterr couldn't find any tabs for this song"
     else:
-        tabs_url = \
-            "http://www.songsterr.com/a/wa/bestMatchForQueryString?s={}&a={}"
+        tabs_0 = "http://www.songsterr.com/a/wa/"
+        tabs_1 = "bestMatchForQueryString?s={}&a={}"
+        
         # Whitespaces are replaced with "%20" as required by the API
         # in order to make the link exploitable
-        url_format = tabs_url.format
-        (title.replace(" ", "%20"),
-         artist.replace(" ", "%20"))
-        # print("Link to tabs:", url_format,"\n\n")
-        # print("Some songs from *{}*
-        # you might be interested in".format(artist))
-        nl = [(x["title"], len(x["tabTypes"]))
-              for x in datass if x["chordsPresent"] is True],
+        url_format = tabs_0 + tabs_1.format(title.replace(" ", "%20"),
+                                            artist.replace(" ", "%20"))
+        
+        nl = []
+        for x in datass:
+            if x["chordsPresent"] is True:
+                nl += [ (x["title"], len(x["tabTypes"])) ]
+        
         nl.sort(key=lambda x: x[1], reverse=True)
         df = pd.DataFrame({"-----------------\
         ---------------": [x[0] for x in nl[:5]]})
-        # for x in nl[:10]:
-        #    print(x[0])
-
+        
         return (url_format, df)

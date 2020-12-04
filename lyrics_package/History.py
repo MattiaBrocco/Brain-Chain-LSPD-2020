@@ -17,8 +17,8 @@ def create_hist(artist, title):
     """
     csv_dir = os.path.dirname(os.path.realpath(__file__))
     if path.exists(csv_dir + "\\" + "history.csv") is False:
-        with open(csv_dir + "\\" + "history.csv", "w", newline="")
-        as csvfile:
+        with open(csv_dir + "\\" + "history.csv",
+                  "w", newline="") as csvfile:
             # Add column names with this list
             fields = ["Artist", "Title", "Datetime"]
             # Based on DictWriter, a new line with header is added.
@@ -29,8 +29,9 @@ def create_hist(artist, title):
                              "Datetime": datetime.now()
                              .strftime("%d/%m/%y %H:%M:%S")})
     else:
-        with open(csv_dir + "\\" + "history.csv", "a", newline="")
-        as csvfile:  # "a" stands for append
+        # "a" stands for append
+        with open(csv_dir + "\\" + "history.csv",
+                  "a", newline="") as csvfile:
             writer = csv.writer(csvfile)
             # Once the file is already there, it is only necessary to
             # append the row through a list
@@ -49,8 +50,8 @@ def create_hist(artist, title):
     list_for_df = [[k[0].replace("_", " "), k[1].replace("_", " ")]
                    for k, v in sorted_dict.items()][::-1]
     upd_df = pd.DataFrame(list_for_df,
-                          columns=["----------------", "----------------"])
-    .head(3)
+                          columns=["----------------",
+                                   "----------------"]).head(3)
     # CODE FOR MOST SEARCHED QUERIES
     art_tit_list = [(r[1][0], r[1][1]) for r in df.iterrows()]
     sorted_dict = dict(Counter(art_tit_list))
@@ -58,8 +59,8 @@ def create_hist(artist, title):
     list_for_df = [[k[0].replace("_", " "),
                     k[1].replace("_", " ")] for k, v in sorted_dict.items()]
     upd_df = pd.DataFrame(list_for_df,
-                          columns=["----------------", "----------------"])
-    .head(3)
+                          columns=["----------------",
+                                   "----------------"]).head(3)
 
     """
     # CODE FOR MOST RECENT QUERIES
