@@ -4,9 +4,10 @@ import json
 
 
 SONG_URL = 'https://api.lyrics.ovh/v1/{}/{}'
-
-# Simple API to retrieve the lyrics of a song
-# The input needed are 'artist' and 'title'
+"""
+Simple API to retrieve the lyrics of a song
+The input needed are 'artist' and 'title'
+"""
 
 
 def get_lyrics(artist, title):
@@ -18,9 +19,6 @@ def get_lyrics(artist, title):
     except TypeError:
         pass
     return song
-
-
-# In[80]:
 
 
 artist = 'Beyoncè'
