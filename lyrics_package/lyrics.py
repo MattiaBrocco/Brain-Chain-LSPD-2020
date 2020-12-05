@@ -3,8 +3,8 @@ import json
 
 def get_lyric(artist, title):
     
-    artist=artist.replace("_"," ")
-    title=title.replace("_"," ")
+    artist = artist.replace("_"," ")
+    title = title.replace("_"," ")
     
     song_url = 'https://api.lyrics.ovh/v1/{}/{}'
 
