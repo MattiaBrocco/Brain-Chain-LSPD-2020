@@ -32,7 +32,7 @@ def parsing_input():
 
 try:
     args = parsing_input()
-    
+
     # Initial input check
     if args.history and args.v and len(sys.argv) > 5:
         print("**Use underscores (_) instead of spaces**")
@@ -46,7 +46,7 @@ try:
     elif not args.history and not args.v and len(sys.argv) > 3:
         print("**Use underscores (_) instead of spaces**")
         sys.exit()
-    
+
     # --------------------------------
     # Search history
     hist = history.create_hist(args.artist, args.title,
@@ -76,7 +76,7 @@ try:
         print(song_t[1], "\n\n")
     else:
         print("Link to tabs:{}\n\n".format(song_t[0]))
-    
+
     # --------------------------------
     # SEARCHLY
     sim_song = searchly.similarity(args.artist, args.title)
