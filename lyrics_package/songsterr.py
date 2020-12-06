@@ -35,17 +35,13 @@ def artists_songs(artist, title):
     else:
         tabs_0 = "http://www.songsterr.com/a/wa/"
         tabs_1 = "bestMatchForQueryString?s={}&a={}"
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/docstrings2
+
+
         # Whitespaces are replaced with "%20" as required
         # by the API in order to make the link exploitable
         url_format = tabs_0 + tabs_1.format(title.replace(" ", "%20"),
                                             artist.replace(" ", "%20"))
-<<<<<<< HEAD
-=======
-
         """
         In Songsterr, "datass" contains all the songs of the artist
         the user is searching for. We will search in datass the id of
@@ -56,7 +52,6 @@ def artists_songs(artist, title):
         songs of the artist which have the songs sheets in Songsterr.
         The list of songs will be displayed in a dataframe.
         """
->>>>>>> origin/docstrings2
         nl = []
         for x in datass:
             if x["chordsPresent"] is True:
@@ -65,9 +60,4 @@ def artists_songs(artist, title):
         nl.sort(key=lambda x: x[1], reverse=True)
         df = pd.DataFrame({"-----------------\
         ---------------": [x[0] for x in nl[:5]]})
-<<<<<<< HEAD
-    return (url_format, df)
-=======
-
         return (url_format, df)
->>>>>>> origin/docstrings2

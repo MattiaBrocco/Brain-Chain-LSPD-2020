@@ -71,16 +71,6 @@ def similarity(artist, title):
 
             sim_data = json.loads(sim_response.text)
             print("Listen to similar songs:\n")
-
-            """
-            Here we have created a dataframe which will display the title
-            of the similar song, the artist and the similarity
-            percentage of that song.
-            """
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/docstrings2
             df = pd.DataFrame({"Title": [x["song_name"]
                                          for x in
                                          sim_data["response"]
@@ -93,5 +83,9 @@ def similarity(artist, title):
                                               for x in
                                               sim_data["response"]
                                               ["similarity_list"]]})
-
+            """
+            Here we have created a dataframe which will display the title
+            of the similar song, the artist and the similarity
+            percentage of that song.
+            """
         return df.head(5)
