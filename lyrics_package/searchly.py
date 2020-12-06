@@ -9,6 +9,16 @@ def similarity(artist, title):
     we have searched for. The user input that will start the function
     are the artist name and the title of the song he are looking for.
     """
+    if type(artist) != str or type(title) != str:
+        raise AttributeError("Invalid input type")
+    blacklist = ["\n", "\t", "\\"]
+    for bl in blacklist:
+        if bl in artist or bl in title:
+            raise Exception("Invalid character: ", bl)
+    """
+    This first block came from testing on
+    valid/invalid and edge cases.
+    """
 
     artist = artist.replace("_", " ")
     title = title.replace("_", " ")
