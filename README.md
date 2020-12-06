@@ -6,7 +6,7 @@ With this repository, selecting a song title and its artist, you will be able to
 1) Get the lyrics of that song (API: [*lyrics.ovh*](https://lyrics.ovh));
 2) Find out the link of the music sheet of that song of it is present (API: [*songsterr.com*](https://www.songsterr.com)) ;
 3) Search for songs similar to the one selected by us (API: [*SearchLy.com*](http://www.searchly.com)) ;
-4) Search for other songs by the same artist (API: [*songsterr.com*](https://www.songsterr.com).
+4) Search for other songs by the same artist (API: [*songsterr.com*](https://www.songsterr.com)).
 
 To reach our goal we will use some new public available APIs.
 
