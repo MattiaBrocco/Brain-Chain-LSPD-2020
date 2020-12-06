@@ -3,7 +3,7 @@ import unittest
 import pandas as pd
 from lyrics_package import history
 from pandas.testing import assert_frame_equal
-# TO RUN IT: python -m unittest tests/test_csv_reader.py
+# TO RUN IT: python -m unittest lyrics_package/tests/test_csv_reader.py
 
 
 class TestCSVReader(unittest.TestCase):

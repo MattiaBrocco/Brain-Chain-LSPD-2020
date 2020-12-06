@@ -10,7 +10,7 @@ def get_lyric(artist, title):
     """
     if type(artist) != str or type(title) != str:
         raise AttributeError("Invalid input type")
-    
+
     blacklist = ["\n", "\t", "\\"]
     for bl in blacklist:
         if bl in artist or bl in title:

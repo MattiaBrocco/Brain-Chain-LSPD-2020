@@ -35,9 +35,6 @@ def artists_songs(artist, title):
     else:
         tabs_0 = "http://www.songsterr.com/a/wa/"
         tabs_1 = "bestMatchForQueryString?s={}&a={}"
-
-
-
         # Whitespaces are replaced with "%20" as required
         # by the API in order to make the link exploitable
         url_format = tabs_0 + tabs_1.format(title.replace(" ", "%20"),

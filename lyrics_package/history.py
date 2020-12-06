@@ -14,8 +14,6 @@ def create_hist(artist, title, file_path):
     and the new line. The check is performed in the directory of this file,
     that will be the same directory in which the .csv will be stored.
     """
-    ####### csv_dir = os.path.dirname(os.path.realpath(__file__))
-    ####### csv_dir + "\\" + file
     if path.exists(file_path) is False:
         with open(file_path,
                   "w", newline="") as csvfile:
