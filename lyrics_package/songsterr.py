@@ -13,7 +13,17 @@ def artists_songs(artist, title):
     and a data frame containing three similar songs to the one
     that has been searched.
     """
-
+    if type(artist) != str or type(title) != str:
+        raise AttributeError("Invalid input type")
+    
+    blacklist = ["\n", "\t", "\\"]
+    for bl in blacklist:
+        if bl in artist or bl in title:
+            raise Exception("Invalid character: ", bl)
+    """
+    This first block came from testing on
+    valid/invalid and edge cases.
+    """
     artist = artist.replace("_", " ")
     title = title.replace("_", " ")
 
