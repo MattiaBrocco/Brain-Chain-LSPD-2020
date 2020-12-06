@@ -3,14 +3,14 @@
 We welcome you to our repository “Brain Chain”. :wave:
 
 With this repository, selecting a song title and its artist, you will be able to:
-1) Get the lyrics of that song (API: lyrics.ovh);
-2) Find out the link of the music sheet of that song of it is present (API: songsterr.com) ;
-3) Search for songs similar to the one selected by us (API: SearchLy.com) ;
-4) Search for other songs by the same artist (API: songsterr.com).
+1) Get the lyrics of that song (API: [*lyrics.ovh*](https://lyrics.ovh));
+2) Find out the link of the music sheet of that song of it is present (API: [*songsterr.com*](https://www.songsterr.com)) ;
+3) Search for songs similar to the one selected by us (API: [*SearchLy.com*](http://www.searchly.com)) ;
+4) Search for other songs by the same artist (API: [*songsterr.com*](https://www.songsterr.com).
 
 To reach our goal we will use some new public available APIs.
 
-In this repository you can find a file named ```main.py``` -----
+In this repository you can find a file named ```main.py```
 
 If you run the program, executing the main file with: ```$ python main.py oasis wonderwall -history -v``` it will  give you results similar to the following: 
 
@@ -44,7 +44,7 @@ Listen to similar songs:
 > **Note:** the project requires the following modules to run: *argparse*, *os*, *pandas*, *requests*, *json*, *unittest*, *sys*, *csv*, *collections*, *datetime*.
 
 
-## COMMAND LINE PARAMETERS
+## COMMAND LINE PARAMETERS :computer:
  
 Some command line parameters are required in order to run the main script.
 
@@ -54,14 +54,14 @@ Positional arguments:
  
 Optional argument:
 - **-v:** be more verbose. Some modules also include verbosity. There is **one level** of verbosity in this first release.
-- **-history:** 
+- **-history:** it will let you get the history of the latest searches of users who have used the program before you.
 
 
 Thanks for your attention!
 
 Team Brain Chain :brain:
 
-## AUTHORS 
+## AUTHORS :man_technologist::woman_technologist:
 
 - [**Mattia Brocco**](https://www.linkedin.com/in/mattia-brocco-digital-student/)
 - [**Anna Costa**](https://www.linkedin.com/in/annacosta99/)
