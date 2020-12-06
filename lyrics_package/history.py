@@ -7,7 +7,7 @@ from datetime import datetime
 from collections import Counter
 
 
-def create_hist(artist, title, file):
+def create_hist(artist, title, file_path):
     """
     Check if the file already exists: in case it does
     append an additional line to the file, otherwise
@@ -15,9 +15,10 @@ def create_hist(artist, title, file):
     and the new line. The check is performed in the directory of this file,
     that will be the same directory in which the .csv will be stored.
     """
-    csv_dir = os.path.dirname(os.path.realpath(__file__))
-    if path.exists(csv_dir + "\\" + file) is False:
-        with open(csv_dir + "\\" + file,
+    ####### csv_dir = os.path.dirname(os.path.realpath(__file__))
+    ####### csv_dir + "\\" + file
+    if path.exists(file_path) is False:
+        with open(file_path,
                   "w", newline="") as csvfile:
             # Add column names with this list
             fields = ["Artist", "Title", "Datetime"]
@@ -30,7 +31,7 @@ def create_hist(artist, title, file):
                              .strftime("%d/%m/%y %H:%M:%S")})
     else:
         # "a" stands for append
-        with open(csv_dir + "\\" + file,
+        with open(file_path,
                   "a", newline="") as csvfile:
             writer = csv.writer(csvfile)
             # Once the file is already there, it is only necessary to
@@ -44,7 +45,7 @@ def create_hist(artist, title, file):
     A nested list is produced and then reversed so that
     the most searched parameters will be displayed first.
     """
-    df = pd.read_csv(csv_dir + "\\" + file)
+    df = pd.read_csv(file_path)
     art_tit_list = [(r[1][0], r[1][1]) for r in df.iterrows()]
     sorted_dict = dict(Counter(art_tit_list))
     list_for_df = [[k[0].replace("_", " "), k[1].replace("_", " ")]
@@ -67,7 +68,7 @@ def create_hist(artist, title, file):
     upd_df = df.iloc[::-1]
     upd_df = upd_df.drop_duplicates(subset = ["Artist", "Title"],
                                     keep = "first")
-                                    # first because it would be the most recent
+    # first because it would be the most recent
     upd_df.reset_index(inplace = True, drop = True)
     upd_df = upd_df[["Artist", "Title"]]
     upd_df = upd_df.head(3)

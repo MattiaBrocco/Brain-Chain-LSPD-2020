@@ -47,7 +47,7 @@ def similarity(artist, title):
     else:
         if len(data["response"]["results"]) < 1:
             # This is the case when the request is successful, but empty
-            return "Similars song not found"
+            return "Similar songs not found"
         elif len(data["response"]["results"]) > 1:
             # If more than one result is found, we must let
             # the user choose what to do by showing all the found results

@@ -13,7 +13,16 @@ def artists_songs(artist, title):
     and a data frame containing three similar songs to the one
     that has been searched.
     """
-
+    if type(artist) != str or type(title) != str:
+        raise AttributeError("Invalid input type")
+    blacklist = ["\n", "\t", "\\"]
+    for bl in blacklist:
+        if bl in artist or bl in title:
+            raise Exception("Invalid character: ", bl)
+    """
+    This first block came from testing on
+    valid/invalid and edge cases.
+    """
     artist = artist.replace("_", " ")
     title = title.replace("_", " ")
 
@@ -27,19 +36,16 @@ def artists_songs(artist, title):
     else:
         tabs_0 = "http://www.songsterr.com/a/wa/"
         tabs_1 = "bestMatchForQueryString?s={}&a={}"
-        
         # Whitespaces are replaced with "%20" as required
         # by the API in order to make the link exploitable
         url_format = tabs_0 + tabs_1.format(title.replace(" ", "%20"),
                                             artist.replace(" ", "%20"))
-        
         nl = []
         for x in datass:
             if x["chordsPresent"] is True:
-                nl += [ (x["title"], len(x["tabTypes"])) ]
-        
+                nl += [(x["title"], len(x["tabTypes"]))]
+
         nl.sort(key=lambda x: x[1], reverse=True)
         df = pd.DataFrame({"-----------------\
         ---------------": [x[0] for x in nl[:5]]})
-        
-        return (url_format, df)
+    return (url_format, df)
