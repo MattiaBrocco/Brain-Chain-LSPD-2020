@@ -1,6 +1,5 @@
 import os
 import csv
-import platform
 from os import path
 import pandas as pd
 from datetime import datetime
@@ -27,7 +26,7 @@ def create_hist(artist, title, file_path):
             writer = csv.DictWriter(csvfile, fieldnames=fields)
             writer.writeheader()
             writer.writerow({"Artist": artist, "Title": title,
-                             "Datetime": datetime.now()\
+                             "Datetime": datetime.now()
                              .strftime("%d/%m/%y %H:%M:%S")})
     else:
         # "a" stands for append

@@ -59,6 +59,13 @@ try:
     # LYRICS
     song_l = lyrics.get_lyric(args.artist, args.title)
 
+<<<<<<< HEAD
+=======
+    if len(sys.argv) > 4: #######################################
+        print("**Use underscores (_) instead of spaces**")
+        sys.exit()
+
+>>>>>>> origin/docstrings2
     if args.v:  # verbosity = False
         print("\n\nThis is {} by {}:".format(args.title, args.artist))
         print("\n\n{}\n\n".format(song_l))
