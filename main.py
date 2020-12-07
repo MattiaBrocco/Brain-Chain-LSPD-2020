@@ -14,13 +14,13 @@ def parsing_input():
     parser = argparse.ArgumentParser()
     # positional arguments
     parser.add_argument("artist",
-                        help='the arstist of song you are searching for')
+                        help="The arstist of song you are searching for")
     parser.add_argument("title",
-                        help='the title of the song you are searching for')
+                        help="The title of the song you are searching for")
 
     # optional arguments
     parser.add_argument("-v",
-                        help='increases verbosity of the program',
+                        help="Increases verbosity of the program",
                         action="store_true")
     # if the user doesn't input "-v" then verbosity is False
     parser.add_argument("-history", help="Show most searched songs",
