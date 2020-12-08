@@ -37,7 +37,7 @@ Realized what you gotta do
 I don't believe that anybody
 Feels the way I do about you now [...]
 
-Link to tabs:http://www.songsterr.com/a/wa/bestMatchForQueryString?s=wonderwall&a=oasis
+Link to tabs: <http://www.songsterr.com/a/wa/bestMatchForQueryString?s=wonderwall&a=oasis>
 
 Listen to similar songs:
 
