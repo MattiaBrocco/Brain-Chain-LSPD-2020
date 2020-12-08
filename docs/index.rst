@@ -25,7 +25,7 @@ In this repository you can find a file named ``main.py``
 If you run the program, executing the main file with: ``$ python main.py oasis wonderwall -history -v`` it will  give you results similar to the following: 
 
 
-
+``
 $ python main.py oasis wonderwall -history -v
 
 Most searched songs
@@ -51,24 +51,25 @@ Listen to similar songs:
 2     first comes the night          isaak, chris       94.78
 3    the walls of the world           katie melua       94.65
 4                lights out           angel olsen       94.55
+``
 
  **Note:** the project requires the following modules to run: *argparse*, *os*, *pandas*, *requests*, *json*, *unittest*, *coverage*, *pytest*, *sys*, *csv*, *collections*, *datetime*.
 
 In this repository there is also a folder named ``lyrics_package``
 
 In this folder you can find the following list of files:
-1) ```lyrics.py```
-2) ```searchly.py```
-3) ```songsterr.py```
+1) ``lyrics.py``
+2) ``searchly.py``
+3) ``songsterr.py``
 
 Each one of the above files contains the code of the implementation of an API (precisely lyrics.ovh, SearchLy and Songsterr).
 
-- In the ```lyrics.py``` file, we exploited the lyrics.ovh API with the aim of developing a function which, given the song author and title, would be able to return the lyrics of the song.
+- In the ``lyrics.py`` file, we exploited the lyrics.ovh API with the aim of developing a function which, given the song author and title, would be able to return the lyrics of the song.
 
-- In the ```searchly.py``` file, we have used the SearchLy API. With the function _similarity_ the user will obtain similar songs to the one he has searched for. The user input that will start the function are the artist name and the title of the song he are looking for.
+- In the ``searchly.py`` file, we have used the SearchLy API. With the function _similarity_ the user will obtain similar songs to the one he has searched for. The user input that will start the function are the artist name and the title of the song he are looking for.
 If the API doesn't return an error, the function controls the lenght of the results of the response which is in JSON format and it returns a table with the best suggestions for the user or the right song. 
 
-- In the ```songsterr.py``` file, we have exploited the Songsterr API. With the function _artists_songs_ the user will obtain as output the URL of the song sheet of the song they are looking for and a dataframe containing other five songs of the same artist. We will search the songs in Songsterr using the id of the searched artist. The user input that will start the function are the artist name and the title of the song they are looking for.
+- In the ``songsterr.py`` file, we have exploited the Songsterr API. With the function _artists_songs_ the user will obtain as output the URL of the song sheet of the song they are looking for and a dataframe containing other five songs of the same artist. We will search the songs in Songsterr using the id of the searched artist. The user input that will start the function are the artist name and the title of the song they are looking for.
 
 
 ## COMMAND LINE PARAMETERS
