@@ -9,9 +9,13 @@ Welcome to "Brain Chain Project"'s documentation!
 We welcome you to our repository “Brain Chain”.
 
 With this repository, selecting a song title and its artist, you will be able to:
+
 1) Get the lyrics of that song (API: *lyrics.ovh* <https://lyrics.ovh> );
+
 2) Find out the link of the music sheet of that song of it is present (API: *songsterr.com* <https://www.songsterr.com> ) ;
+
 3) Search for songs similar to the one selected by us (API: *SearchLy.com* <http://www.searchly.com> ) ;
+
 4) Search for other songs by the same artist (API: *songsterr.com* <https://www.songsterr.com> ).
 
 To reach our goal we will use some new public available APIs.
@@ -21,11 +25,11 @@ In this repository you can find a file named ``main.py``
 If you run the program, executing the main file with: ``$ python main.py oasis wonderwall -history -v`` it will  give you results similar to the following: 
 
 
-``
+
 $ python main.py oasis wonderwall -history -v
 
 Most searched songs
-  ---------------- ----------------
+ ---------------- ----------------
 0        lady gaga        paparazzi
 1            oasis       wonderwall
 
@@ -41,14 +45,14 @@ Link to tabs: <http://www.songsterr.com/a/wa/bestMatchForQueryString?s=wonderwal
 
 Listen to similar songs:
 
-                      Title                Artist  Similarity
+                    Title                  Artist  Similarity
 0  don't know what it means  tedeschi trucks band       95.08
 1             father to son         collins, phil       94.87
 2     first comes the night          isaak, chris       94.78
 3    the walls of the world           katie melua       94.65
 4                lights out           angel olsen       94.55
-``
-> **Note:** the project requires the following modules to run: *argparse*, *os*, *pandas*, *requests*, *json*, *unittest*, *coverage*, *pytest*, *sys*, *csv*, *collections*, *datetime*.
+
+ **Note:** the project requires the following modules to run: *argparse*, *os*, *pandas*, *requests*, *json*, *unittest*, *coverage*, *pytest*, *sys*, *csv*, *collections*, *datetime*.
 
 In this repository there is also a folder named ``lyrics_package``
 
