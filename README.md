@@ -41,7 +41,7 @@ Listen to similar songs:
 3    the walls of the world           katie melua       94.65
 4                lights out           angel olsen       94.55
 ```
-> **Note:** the project requires the following modules to run: *argparse*, *os*, *pandas*, *requests*, *json*, *unittest*, *sys*, *csv*, *collections*, *datetime*.
+> **Note:** the project requires the following modules to run: *argparse*, *os*, *pandas*, *requests*, *json*, *unittest*, *coverage*, *pytest*, *sys*, *csv*, *collections*, *datetime*.
 
 
 ## COMMAND LINE PARAMETERS :computer:
