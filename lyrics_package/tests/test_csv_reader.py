@@ -1,6 +1,8 @@
 import os
+import csv
 import unittest
 import pandas as pd
+from os import path
 from lyrics_package import history
 from pandas.testing import assert_frame_equal
 # TO RUN IT: python -m unittest lyrics_package/tests/test_csv_reader.py
@@ -26,15 +28,12 @@ class TestCSVReader(unittest.TestCase):
                                 columns=["----------------",
                                          "----------------"]).head(3)
         assert_frame_equal(actual, expected)
-        
-    # Test that at this point "create_hist"
-    # returns a non-empty dataframe
-    def test_non_empty(self):
+        # Now, test that the "else" block (as the .csv file now exists)
         df = history.create_hist("a", "b", self.temp_file)
         self.assertFalse(df.empty)
 
     def tearDown(self):
-        os.remove(self.path + "\\tmp.csv")
+        os.remove(self.temp_file)
 
 
 if __name__ == "__main__":
