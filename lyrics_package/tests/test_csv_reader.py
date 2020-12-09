@@ -8,8 +8,9 @@ from pandas.testing import assert_frame_equal
 # TO RUN IT: python -m unittest lyrics_package/tests/test_csv_reader.py
 # COVERAGE: coverage run -m py.test lyrics_package/tests/test_csv_reader.py
 
+
 class TestCSVReader(unittest.TestCase):
-    
+
     def setUp(self):
         """
         The function "create_hist" requires a valid

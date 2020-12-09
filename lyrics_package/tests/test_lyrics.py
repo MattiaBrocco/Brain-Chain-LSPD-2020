@@ -3,6 +3,7 @@ from lyrics_package import lyrics
 # TO RUN IT: python -m unittest lyrics_package/tests/test_lyrics.py
 # COVERAGE: coverage run -m py.test lyrics_package/tests/test_lyrics.py
 
+
 class TestLyricsInput(unittest.TestCase):
 
     def test_wrong_type1(self):
@@ -24,7 +25,7 @@ class TestLyricsInput(unittest.TestCase):
     def test_string_special(self):
         with self.assertRaises(Exception):
             lyrics.get_lyric("abc\nd", "ef\th")
-            
+
     def test_str_out(self):
         p1 = lyrics.get_lyric("oasis", "wonderwall")
         p2 = lyrics.get_lyric("guarda_come_flexo", "mambolosco")

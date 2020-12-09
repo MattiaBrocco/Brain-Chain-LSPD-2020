@@ -4,6 +4,7 @@ from lyrics_package import searchly
 # TO RUN IT: python -m unittest lyrics_package/tests/test_searchly.py
 # COVERAGE: coverage run -m py.test lyrics_package/tests/test_searchly.py
 
+
 class TestLyricsInput(unittest.TestCase):
 
     def test_wrong_type1(self):
@@ -25,7 +26,7 @@ class TestLyricsInput(unittest.TestCase):
     def test_string(self):
         with self.assertRaises(Exception):
             searchly.similarity("abc\nd", "ef\th")
-            
+
     def test_str_out(self):
         """
         :p1 to test existing song for searchly, with multiple
