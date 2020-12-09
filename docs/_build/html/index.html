@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+
+<html lang="English">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to &#34;Brain Chain Project&#34; documentation! &#8212; &#34;Brain Chain Project&#34; &#34;7/12&#34; documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-brain-chain-project-documentation">
+<h1>Welcome to &quot;Brain Chain Project&quot; documentation!<a class="headerlink" href="#welcome-to-brain-chain-project-documentation" title="Permalink to this headline">¶</a></h1>
+<p>We welcome you to our repository “Brain-Chain-2020”.</p>
+<p>With this program, by selecting a song title and its artist, you will be able to:</p>
+<ol class="arabic simple">
+<li><p>Get the lyrics of that song (API: <em>lyrics.ovh</em> &lt;<a class="reference external" href="https://lyrics.ovh">https://lyrics.ovh</a>&gt; );</p></li>
+<li><p>Find out the link of the music sheet of that song of it is present (API: <em>songsterr.com</em> &lt;<a class="reference external" href="https://www.songsterr.com">https://www.songsterr.com</a>&gt; ) ;</p></li>
+<li><p>Search for songs similar to the one selected by us (API: <em>SearchLy.com</em> &lt;<a class="reference external" href="http://www.searchly.com">http://www.searchly.com</a>&gt; ) ;</p></li>
+<li><p>Search for other songs by the same artist (API: <em>songsterr.com</em> &lt;<a class="reference external" href="https://www.songsterr.com">https://www.songsterr.com</a>&gt; ).</p></li>
+</ol>
+<p>To reach our goal we will use some new public available APIs.</p>
+<p>In this repository you can find a file named <code class="docutils literal notranslate"><span class="pre">main.py</span></code></p>
+<p>If you run the program, executing the main file with: <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">main.py</span> <span class="pre">oasis</span> <span class="pre">wonderwall</span> <span class="pre">-history</span> <span class="pre">-v</span></code> you will have an example of how the software works.</p>
+<p><strong>Note:</strong> the project requires the following modules to run: <em>argparse</em>, <em>os</em>, <em>pandas</em>, <em>requests</em>, <em>json</em>, <em>unittest</em>, <em>coverage</em>, <em>pytest</em>, <em>sys</em>, <em>csv</em>, <em>collections</em>, <em>datetime</em>.</p>
+<p>In this repository there is also a folder named <code class="docutils literal notranslate"><span class="pre">lyrics_package</span></code></p>
+<p>In this folder you can find the following list of files:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lyrics.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">searchly.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">songsterr.py</span></code></p></li>
+</ol>
+<p>Each one of the above files contains the code of the implementation of an API (precisely lyrics.ovh, SearchLy and Songsterr).</p>
+<ul class="simple">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">lyrics.py</span></code> file, we exploited the lyrics.ovh API with the aim of developing a function which, given the song author and title, would be able to return the lyrics of the song.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">searchly.py</span></code> file, we have used the SearchLy API. With the function _similarity_ the user will obtain similar songs to the one he has searched for. The user input that will start the function are the artist name and the title of the song he are looking for.</p></li>
+</ul>
+<p>If the API doesn't return an error, the function controls the lenght of the results of the response which is in JSON format and it returns a table with the best suggestions for the user or the right song.</p>
+<ul class="simple">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">songsterr.py</span></code> file, we have exploited the Songsterr API. With the function _artists_songs_ the user will obtain as output the URL of the song sheet of the song they are looking for and a dataframe containing other five songs of the same artist. We will search the songs in Songsterr using the id of the searched artist. The user input that will start the function are the artist name and the title of the song they are looking for.</p></li>
+</ul>
+<p>## COMMAND LINE PARAMETERS</p>
+<p>Some command line parameters are required in order to run the main script.</p>
+<p>Positional arguments:
+- <strong>&quot;Artist&quot;</strong> of the song you are searching for.
+- <strong>&quot;Title&quot;</strong> of the song you are searching for.</p>
+<p>Optional arguments:
+- <strong>-v:</strong> be more verbose. Some modules also include verbosity. There is <strong>one level</strong> of verbosity in this first release.
+- <strong>-history:</strong> it will let you get the history of the latest searches of users who have used the program before you.</p>
+<p>Thanks for your attention!</p>
+<p>Team Brain Chain</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">"Brain Chain Project"</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, "Brain Chain".
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
