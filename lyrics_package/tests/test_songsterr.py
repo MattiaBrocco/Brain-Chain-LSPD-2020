@@ -30,11 +30,15 @@ class TestLyricsInput(unittest.TestCase):
         """
         :p1 to test existing song for songsterr
         :p2 to test non-existing song
+        :p3 to test an artist that is found, but whose
+            songs are not
         """
         p1 = songsterr.artists_songs("oasis", "wonderwall")
         p2 = songsterr.artists_songs("guarda_come_flexo", "mambolosco")
+        p3 = songsterr.artists_songs("ariana_grande", "7_rings")
         self.assertIsInstance(p1, tuple)
         self.assertIsInstance(p2, str)
+        self.assertIsInstance(p3, str)
 
 
 if __name__ == "__main__":

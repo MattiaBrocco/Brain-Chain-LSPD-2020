@@ -31,6 +31,6 @@ def get_lyric(artist, title):
 
     song = data['lyrics']
     if len(song) == 0:
-        return "Lyrics of this song were not found"
+        return "Lyrics of this song were not found"  # len()==34
     else:
         return song

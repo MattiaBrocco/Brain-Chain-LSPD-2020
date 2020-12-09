@@ -1,6 +1,7 @@
 import os
 import sys
 import argparse
+import pandas as pd
 from lyrics_package import lyrics
 from lyrics_package import history
 from lyrics_package import searchly
@@ -58,25 +59,32 @@ try:
     # --------------------------------
     # LYRICS
     song_l = lyrics.get_lyric(args.artist, args.title)
-
-    if args.v:  # verbosity = False
-        print("\n\nThis is {} by {}:".format(args.title, args.artist))
-        print("\n\n{}\n\n".format(song_l))
+    if len(song_l) == 34:  # len of the first get_lyric return
+        print("\n\n", song_l, "\n\n")
     else:
-        print("\n\n{}\n\n".format(song_l))
+        if args.v:  # verbosity = False
+            print("\n\nThis is {} by {}:".format(args.title, args.artist))
+            print("\n\n{}\n\n".format(song_l))
+        else:
+            print("\n\n{}\n\n".format(song_l))
 
     # --------------------------------
     # SONGSTERR
     song_t = songsterr.artists_songs(args.artist, args.title)
 
-    if args.v:  # verbosity = False
-        print("Link to tabs:{}\n\n".format(song_t[0]))
-        print("Some songs from *{}* you might be interested in:"
-              .format(args.artist.capitalize()))
-        print(song_t[1], "\n\n")
-    else:
-        print("Link to tabs:{}\n\n".format(song_t[0]))
+    if type(song_t) == tuple:
+        if args.v:  # verbosity = False
+            print("Link to tabs:{}\n\n".format(song_t[0]))
+            ar_split = args.artist.replace("_", " ").split(" ")
+            ar_list = [x.capitalize() for x in ar_split]
 
+            print("Some songs from *{}* you might be interested in:"
+                  .format(" ".join(ar_list)))
+            print(song_t[1], "\n\n")
+        else:
+            print("Link to tabs:{}\n\n".format(song_t[0]))
+    else:
+        print(song_t)
     # --------------------------------
     # SEARCHLY
     sim_song = searchly.similarity(args.artist, args.title)

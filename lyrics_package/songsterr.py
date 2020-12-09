@@ -57,4 +57,7 @@ def artists_songs(artist, title):
         nl.sort(key=lambda x: x[1], reverse=True)
         df = pd.DataFrame({"-----------------\
         ---------------": [x[0] for x in nl[:5]]})
-        return (url_format, df)
+        if df.empty is True:
+            return "Songsterr couldn't find any tabs for this song"
+        else:
+            return (url_format, df)

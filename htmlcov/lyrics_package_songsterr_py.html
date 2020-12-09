@@ -21,8 +21,8 @@
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
-            28 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">28 run</button>
+            30 statements &nbsp;
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">30 run</button>
             <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">0 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
@@ -110,13 +110,16 @@
     <p id="t57" class="run"><span class="n"><a href="#t57">57</a></span><span class="t">        <span class="nam">nl</span><span class="op">.</span><span class="nam">sort</span><span class="op">(</span><span class="nam">key</span><span class="op">=</span><span class="key">lambda</span> <span class="nam">x</span><span class="op">:</span> <span class="nam">x</span><span class="op">[</span><span class="num">1</span><span class="op">]</span><span class="op">,</span> <span class="nam">reverse</span><span class="op">=</span><span class="key">True</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t58" class="run"><span class="n"><a href="#t58">58</a></span><span class="t">        <span class="nam">df</span> <span class="op">=</span> <span class="nam">pd</span><span class="op">.</span><span class="nam">DataFrame</span><span class="op">(</span><span class="op">{</span><span class="str">"-----------------\</span>&nbsp;</span><span class="r"></span></p>
     <p id="t59" class="pln"><span class="n"><a href="#t59">59</a></span><span class="t"><span class="str">        ---------------"</span><span class="op">:</span> <span class="op">[</span><span class="nam">x</span><span class="op">[</span><span class="num">0</span><span class="op">]</span> <span class="key">for</span> <span class="nam">x</span> <span class="key">in</span> <span class="nam">nl</span><span class="op">[</span><span class="op">:</span><span class="num">5</span><span class="op">]</span><span class="op">]</span><span class="op">}</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t60" class="run"><span class="n"><a href="#t60">60</a></span><span class="t">        <span class="key">return</span> <span class="op">(</span><span class="nam">url_format</span><span class="op">,</span> <span class="nam">df</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t60" class="run"><span class="n"><a href="#t60">60</a></span><span class="t">        <span class="key">if</span> <span class="nam">df</span><span class="op">.</span><span class="nam">empty</span> <span class="key">is</span> <span class="key">True</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t61" class="run"><span class="n"><a href="#t61">61</a></span><span class="t">            <span class="key">return</span> <span class="str">"Songsterr couldn't find any tabs for this song"</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t62" class="pln"><span class="n"><a href="#t62">62</a></span><span class="t">        <span class="key">else</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t63" class="run"><span class="n"><a href="#t63">63</a></span><span class="t">            <span class="key">return</span> <span class="op">(</span><span class="nam">url_format</span><span class="op">,</span> <span class="nam">df</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </div>
 <div id="footer">
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.3</a>,
-            created at 2020-12-07 22:38 +0100
+            created at 2020-12-09 14:45 +0100
         </p>
     </div>
 </div>
