@@ -1,8 +1,8 @@
 # Brain-Chain-LSPD-2020 :brain:
 
-We welcome you to our repository “Brain Chain”. :wave:
+We welcome you to our repository “Brain-Chain-2020”. :wave:
 
-With this repository, selecting a song title and its artist, you will be able to:
+With this program, by selecting a song title and its artist, you will be able to:
 1) Get the lyrics of that song (API: [*lyrics.ovh*](https://lyrics.ovh));
 2) Find out the link of the music sheet of that song of it is present (API: [*songsterr.com*](https://www.songsterr.com)) ;
 3) Search for songs similar to the one selected by us (API: [*SearchLy.com*](http://www.searchly.com)) ;
@@ -52,7 +52,7 @@ Positional arguments:
 - **"Artist"** of the song you are searching for.
 - **"Title"** of the song you are searching for.
  
-Optional argument:
+Optional arguments:
 - **-v:** be more verbose. Some modules also include verbosity. There is **one level** of verbosity in this first release.
 - **-history:** it will let you get the history of the latest searches of users who have used the program before you.
 
