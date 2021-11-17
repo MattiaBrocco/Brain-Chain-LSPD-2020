@@ -63,7 +63,7 @@ Team Brain Chain :brain:
 
 ## AUTHORS :man_technologist::woman_technologist:
 
-- [**Mattia Brocco**](https://www.linkedin.com/in/mattia-brocco-digital-student/)
+- [**Mattia Brocco**](www.linkedin.com/in/mattia-brocco-data-science/)
 - [**Anna Costa**](https://www.linkedin.com/in/annacosta99/)
 - [**Alessandra Cancellari**](https://www.linkedin.com/in/alessandracancellari/)
 - [**Eleonora Sartori**](https://www.linkedin.com/in/eleonorasartori97/)
